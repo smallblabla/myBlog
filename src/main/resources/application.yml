@@ -1,0 +1,28 @@
+server:
+  port: 7777
+
+spring:
+  thymeleaf:
+    mode: HTML
+
+  datasource:
+    username: root
+    password: pfy19981012
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.pfy.blog.entity
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+logging:
+  level:
+    root: warn
+    com.pfy: debug
+  file: log/imcoding.log

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/share_html :: head(~{::title})">
+  <title>博客管理</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="admin/share_html :: nav(1)"/>
+<!-- 二级导航 -->
+<div th:replace="admin/share_html :: div_nav"/>
+
+  <br>
+  <br>
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+      <form action="#" th:action="@{/admin/blog/search}" method="post" class="ui segment form">
+        <div class="inline fields">
+          <div class="field">
+            <input type="text" name="title" placeholder="标题" value="null" th:value="${title}">
+          </div>
+            <div class="field">
+              <div class="ui selection dropdown">
+                <input type="hidden" name="type" value="0" th:value="${type_id}">
+                <i class="dropdown icon"></i>
+                <div class="default text">分类</div>
+                <div class="menu">
+                  <div class="item" th:each="type:${types}" th:data-value="${type.getType_id()}" th:text="${type.getType_name()}">错误日志</div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input name="recommendSwitch" type="checkbox" onclick="javascript:document.getElementById('recommendSwitch').value=this.checked;">
+                <input name="recommendSwitch" type="hidden" value="false" id="recommendSwitch">
+                <label for="recommendSwitch">推荐</label>
+              </div>
+            </div>
+            <div class="field">
+              <button class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
+            </div>
+        </div>
+      </form>
+
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>标题</th>
+            <th>类型</th>
+            <th>推荐</th>
+            <th>状态</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="blog:${pageBlogs.list}">
+            <td th:text="${blog.getId()}">1</td>
+            <td th:text="${blog.getTitle()}">刻意练习清单</td>
+            <td th:text="${blog.getType().getType_name()}">认知升级</td>
+            <td th:text="${blog.isRecommend_switch()} ? '是':'否'">是</td>
+            <td th:text="${blog.isRelease_switch()} ? '发布':'草稿'">草稿</td>
+            <td th:text="${blog.getUpdate_time()}">2017-10-02 09:45</td>
+            <td>
+              <a th:href="@{/admin/blog/toChangeBlog/{id}(id=${blog.getId()})}" class="ui mini teal basic button">编辑</a>
+              <a th:href="@{/admin/blog/deleteBlog/{id}(id=${blog.getId()})}" class="ui mini red basic button">删除</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="7">
+              <div class="ui mini pagination menu">
+                <a class="item" th:href="@{/admin/blog/search(title=${title},type=${type_id},recommendSwitch=${recommendSwitch})}">首页</a>
+                <a class="item" th:href="@{/admin/blog/search(title=${title},type=${type_id},recommendSwitch=${recommendSwitch},pageNum=${pageBlogs.hasPreviousPage}?${pageBlogs.prePage}:1)}">上一页</a>
+                <a class="item" th:href="@{/admin/blog/search(title=${title},type=${type_id},recommendSwitch=${recommendSwitch},pageNum=${pageBlogs.hasNextPage}?${pageBlogs.nextPage}:${pageBlogs.pages})}">下一页</a>
+                <a class="item" th:href="@{/admin/blog/search(title=${title},type=${type_id},recommendSwitch=${recommendSwitch},pageNum=${pageBlogs.pages})}">尾页</a>
+              </div>
+              <span>当前 <span th:text="${pageBlogs.pageNum}"></span> 页,总 <span th:text="${pageBlogs.pages}"></span> 页,共 <span th:text="${pageBlogs.total}"></span> 条记录</span>
+              <a th:href="@{/admin/blog/toAddBlog}" class="ui mini right floated teal basic button">新增</a>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+<!--js-->
+<th:block th:replace="admin/share_html :: script"/>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+      on : 'hover'
+    });
+
+  </script>
+</body>
+</html>

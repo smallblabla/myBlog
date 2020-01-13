@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pfy.blog.service.ReplyService">
+<!--    <resultMap id="user" type="com.pfy.entity.User">-->
+<!--        <result property="id" column="id"/>-->
+<!--        <result property="pwd" column="password"/>-->
+<!--        <result property="username" column="username"/>-->
+<!--    </resultMap>-->
+
+    <select id="selectReplyByBlogAndComment" parameterType="int" resultType="com.pfy.blog.entity.Reply">
+        select * from reply where blog_id = #{blog_id} and comment_id = #{comment_id} order by create_time desc
+    </select>
+
+    <insert id="addReply" parameterType="Reply">
+        insert into reply(username,email,content,create_time,blog_id,comment_id,reply_name,admin_if) values(#{username},#{email},#{content},#{create_time},#{blog_id},#{comment_id},#{reply_name},#{admin_if})
+    </insert>
+
+</mapper>

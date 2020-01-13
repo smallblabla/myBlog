@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/share_html :: head(~{::title})">
+    <title>标签管理</title>
+</head>
+<body>
+<!-- 导航 -->
+<nav th:replace="admin/share_html :: nav(2)"/>
+<!-- 二级导航 -->
+<div th:replace="admin/share_html :: div_nav"/>
+
+<!--中间内容-->
+<div style="padding: 50px 300px 100px 300px; ">
+    <div class="ui container">
+        <div class="ui success message">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p>恭喜，操作成功！</p>
+        </div>
+        <table class="ui celled table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tag:${pageTags.list}">
+                <td name="id" th:text="${tag.getTag_id()}"></td>
+                <td th:text="${tag.getTag_name()}"></td>
+                <td>
+                    <a th:href="@{/admin/tag/toChangeTag/{id}(id=${tag.getTag_id()})}" class="ui mini teal basic button">编辑</a>
+                    <a th:href="@{/admin/tag/deleteTag/{id}(id=${tag.getTag_id()})}" class="ui mini red basic button">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6" >
+                    <div class="ui mini pagination menu">
+                        <a class="item" th:href="@{/admin/tag}">首页</a>
+                        <a class="item" th:href="@{/admin/tag(pageNum=${pageTags.hasPreviousPage}?${pageTags.prePage}:1)}">上一页</a>
+                        <a class="item" th:href="@{/admin/tag(pageNum=${pageTags.hasNextPage}?${pageTags.nextPage}:${pageTags.pages})}">下一页</a>
+                        <a class="item" th:href="@{/admin/tag(pageNum=${pageTags.pages})}">尾页</a>
+                    </div>
+                    <span>当前 <span th:text="${pageTags.pageNum}"></span> 页,总 <span th:text="${pageTags.pages}"></span> 页,共 <span th:text="${pageTags.total}"></span> 条记录</span>
+                    <a th:href="@{/admin/tag/toAddTag}" class="ui mini right floated teal basic button">新增</a>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!--js-->
+<th:block th:replace="admin/share_html :: script"/>
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+
+    $('.ui.form').form({
+        fields : {
+            title : {
+                identifier: 'name',
+                rules: [{
+                    type : 'empty',
+                    prompt: '请输入分类名称'
+                }]
+            }
+        }
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+
+</script>
+</body>
+</html>

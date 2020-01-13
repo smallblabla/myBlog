@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pfy.blog.service.TagService">
+    <insert id="addTag" parameterType="java.lang.String">
+        insert into tag(tag_name) values (#{tag_name})
+    </insert>
+    <delete id="deleteTag" parameterType="int">
+        delete from tag where tag_id = #{tag_id}
+    </delete>
+    <select id="selectTags" resultType="com.pfy.blog.entity.Tag">
+        select *  from tag
+    </select>
+    <update id="changeTag" parameterType="com.pfy.blog.entity.Tag">
+        update tag set tag_name = #{tag_name} where tag_id = #{tag_id}
+    </update>
+    <select id="selectTagById" parameterType="int" resultType="com.pfy.blog.entity.Tag">
+        select * from tag where tag_id = #{tag_id}
+    </select>
+    <select id="selectTagNum" resultType="int">
+        select count(1) from tag
+    </select>
+    
+    <select id="selectOneTagNum" parameterType="String" resultType="int">
+        <bind name="pattern" value="'%' + tag_id + '%'" />
+        select count(1) from type a,blog b where b.tags_id like #{pattern} and a.type_id = b.type_id
+    </select>
+
+    <select id="selectOneBlogTag" parameterType="Long[]" resultType="com.pfy.blog.entity.Tag">
+<!--        <bind name="pattern" value="'[' + tags_id + ']'" />-->
+        select * from tag where tag_id in
+        <foreach collection="tag_ids" item="tagId" index="index"
+                 open="(" close=")" separator=",">
+            '${tagId}'
+        </foreach>
+    </select>
+
+    <select id="selectSomeTag" resultType="com.pfy.blog.entity.Tag">
+        select * from tag limit 10
+    </select>
+
+</mapper>

@@ -1,0 +1,566 @@
+2020-01-13 10:31:34.579  INFO 12324 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 12324 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 10:31:34.653 DEBUG 12324 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 10:31:34.653  INFO 12324 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 10:31:39.065  INFO 12324 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 5.364 seconds (JVM running for 7.503)
+2020-01-13 10:48:55.171  WARN 12324 --- [http-nio-7777-exec-8] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-13 10:48:57.037 DEBUG 12324 --- [http-nio-7777-exec-8] c.pfy.blog.service.UserService.getUser   : ==>  Preparing: select * from user limit 1 
+2020-01-13 10:48:57.067 DEBUG 12324 --- [http-nio-7777-exec-8] c.pfy.blog.service.UserService.getUser   : ==> Parameters: 
+2020-01-13 10:48:57.095 DEBUG 12324 --- [http-nio-7777-exec-8] c.pfy.blog.service.UserService.getUser   : <==      Total: 1
+2020-01-13 10:48:57.199 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 10:48:57.199 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 10:48:57.236 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 10:48:57.239 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 10:48:57.239 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 10:48:57.247 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 10:48:57.250 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectBlogNum  : ==>  Preparing: select count(1) from blog 
+2020-01-13 10:48:57.251 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectBlogNum  : ==> Parameters: 
+2020-01-13 10:48:57.253 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectBlogNum  : <==      Total: 1
+2020-01-13 10:48:57.254 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.TypeService.selectSomeType       : ==>  Preparing: select * from type limit 5 
+2020-01-13 10:48:57.254 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.TypeService.selectSomeType       : ==> Parameters: 
+2020-01-13 10:48:57.256 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.s.TypeService.selectSomeType       : <==      Total: 4
+2020-01-13 10:48:57.258 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.TagService.selectSomeTag   : ==>  Preparing: select * from tag limit 10 
+2020-01-13 10:48:57.259 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.TagService.selectSomeTag   : ==> Parameters: 
+2020-01-13 10:48:57.261 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.TagService.selectSomeTag   : <==      Total: 10
+2020-01-13 10:48:57.263 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectNewBlog  : ==>  Preparing: select * from blog where recommend_switch = true order by create_time desc limit 8 
+2020-01-13 10:48:57.263 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectNewBlog  : ==> Parameters: 
+2020-01-13 10:48:57.272 DEBUG 12324 --- [http-nio-7777-exec-8] c.p.b.service.BlogService.selectNewBlog  : <==      Total: 7
+2020-01-13 10:52:51.853  INFO 10840 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 10840 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 10:52:51.859 DEBUG 10840 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 10:52:51.860  INFO 10840 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 10:52:54.449  INFO 10840 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.141 seconds (JVM running for 4.567)
+2020-01-13 10:58:07.903  INFO 17216 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 17216 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 10:58:07.908 DEBUG 17216 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 10:58:07.908  INFO 17216 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 10:58:10.800  INFO 17216 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.488 seconds (JVM running for 4.952)
+2020-01-13 10:58:53.096  INFO 5584 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 5584 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 10:58:53.104 DEBUG 5584 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 10:58:53.105  INFO 5584 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 10:58:55.876  INFO 5584 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.485 seconds (JVM running for 5.221)
+2020-01-13 11:06:04.395  INFO 13124 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 13124 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 11:06:04.399 DEBUG 13124 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 11:06:04.400  INFO 13124 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 11:06:07.639  INFO 13124 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 4.0 seconds (JVM running for 5.549)
+2020-01-13 11:06:14.389  WARN 13124 --- [http-nio-7777-exec-5] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-13 11:06:15.376 DEBUG 13124 --- [http-nio-7777-exec-5] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 11:06:15.402 DEBUG 13124 --- [http-nio-7777-exec-3] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 11:06:15.416 DEBUG 13124 --- [http-nio-7777-exec-4] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 11:06:15.426 DEBUG 13124 --- [http-nio-7777-exec-5] c.p.blog.service.UserService.selectUser  : ==> Parameters: 用户名(String)
+2020-01-13 11:06:15.426 DEBUG 13124 --- [http-nio-7777-exec-4] c.p.blog.service.UserService.selectUser  : ==> Parameters: 用户名(String)
+2020-01-13 11:06:15.426 DEBUG 13124 --- [http-nio-7777-exec-3] c.p.blog.service.UserService.selectUser  : ==> Parameters: 用户名(String)
+2020-01-13 11:06:15.454 DEBUG 13124 --- [http-nio-7777-exec-4] c.p.blog.service.UserService.selectUser  : <==      Total: 0
+2020-01-13 11:06:15.454 DEBUG 13124 --- [http-nio-7777-exec-3] c.p.blog.service.UserService.selectUser  : <==      Total: 0
+2020-01-13 11:06:15.454 DEBUG 13124 --- [http-nio-7777-exec-5] c.p.blog.service.UserService.selectUser  : <==      Total: 0
+2020-01-13 11:06:15.743 DEBUG 13124 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 11:06:15.744 DEBUG 13124 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==> Parameters: 用户名(String)
+2020-01-13 11:06:15.746 DEBUG 13124 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : <==      Total: 0
+2020-01-13 11:07:33.983  INFO 13508 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 13508 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 11:07:33.989 DEBUG 13508 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 11:07:33.990  INFO 13508 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 11:07:36.963  INFO 13508 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.614 seconds (JVM running for 5.087)
+2020-01-13 11:12:03.752  INFO 15772 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 15772 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 11:12:03.755 DEBUG 15772 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 11:12:03.756  INFO 15772 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 11:12:06.532  INFO 15772 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.388 seconds (JVM running for 4.796)
+2020-01-13 11:54:18.322  INFO 5396 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 5396 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 11:54:18.331 DEBUG 5396 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 11:54:18.332  INFO 5396 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 11:54:22.020  INFO 5396 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 4.654 seconds (JVM running for 6.662)
+2020-01-13 11:54:44.018  WARN 5396 --- [http-nio-7777-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-13 11:54:44.928 DEBUG 5396 --- [http-nio-7777-exec-1] c.pfy.blog.service.UserService.getUser   : ==>  Preparing: select * from user limit 1 
+2020-01-13 11:54:44.949 DEBUG 5396 --- [http-nio-7777-exec-1] c.pfy.blog.service.UserService.getUser   : ==> Parameters: 
+2020-01-13 11:54:44.971 DEBUG 5396 --- [http-nio-7777-exec-1] c.pfy.blog.service.UserService.getUser   : <==      Total: 1
+2020-01-13 11:54:44.998 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 11:54:44.999 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 11:54:45.001 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 11:54:45.002 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 11:54:45.003 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 11:54:45.009 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 11:54:45.010 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectBlogNum  : ==>  Preparing: select count(1) from blog 
+2020-01-13 11:54:45.011 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectBlogNum  : ==> Parameters: 
+2020-01-13 11:54:45.011 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectBlogNum  : <==      Total: 1
+2020-01-13 11:54:45.012 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.TypeService.selectSomeType       : ==>  Preparing: select * from type limit 5 
+2020-01-13 11:54:45.013 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.TypeService.selectSomeType       : ==> Parameters: 
+2020-01-13 11:54:45.015 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.s.TypeService.selectSomeType       : <==      Total: 4
+2020-01-13 11:54:45.015 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.TagService.selectSomeTag   : ==>  Preparing: select * from tag limit 10 
+2020-01-13 11:54:45.016 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.TagService.selectSomeTag   : ==> Parameters: 
+2020-01-13 11:54:45.018 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.TagService.selectSomeTag   : <==      Total: 10
+2020-01-13 11:54:45.018 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectNewBlog  : ==>  Preparing: select * from blog where recommend_switch = true order by create_time desc limit 8 
+2020-01-13 11:54:45.019 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectNewBlog  : ==> Parameters: 
+2020-01-13 11:54:45.029 DEBUG 5396 --- [http-nio-7777-exec-1] c.p.b.service.BlogService.selectNewBlog  : <==      Total: 7
+2020-01-13 11:59:34.179  INFO 7384 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 7384 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 11:59:34.182 DEBUG 7384 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 11:59:34.183  INFO 7384 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 11:59:36.558  INFO 7384 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 2.863 seconds (JVM running for 4.238)
+2020-01-13 11:59:44.862 ERROR 7384 --- [http-nio-7777-exec-2] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-7777-exec-2] Exception processing template "0gin": Error resolving template [0gin], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [0gin], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+
+2020-01-13 11:59:44.866 ERROR 7384 --- [http-nio-7777-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [0gin], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [0gin], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+
+2020-01-13 12:00:08.759  INFO 13180 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 13180 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:00:08.762 DEBUG 13180 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:00:08.763  INFO 13180 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:00:11.088  INFO 13180 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 2.842 seconds (JVM running for 4.372)
+2020-01-13 12:01:38.660  INFO 3244 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 3244 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:01:38.670 DEBUG 3244 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:01:38.672  INFO 3244 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:01:41.847  INFO 3244 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 4.044 seconds (JVM running for 5.734)
+2020-01-13 12:02:38.150  INFO 12480 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 12480 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:02:38.156 DEBUG 12480 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:02:38.158  INFO 12480 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:02:40.714  INFO 12480 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.266 seconds (JVM running for 4.833)
+2020-01-13 12:02:55.895  WARN 12480 --- [http-nio-7777-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-13 12:02:56.894 DEBUG 12480 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 12:02:56.917 DEBUG 12480 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==> Parameters: pfy(String)
+2020-01-13 12:02:56.947 DEBUG 12480 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : <==      Total: 1
+2020-01-13 12:02:57.020 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 12:02:57.021 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 12:02:57.026 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 12:02:57.028 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 12:02:57.028 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 12:02:57.038 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 12:02:57.044 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : ==>  Preparing: select * from tag 
+2020-01-13 12:02:57.044 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : ==> Parameters: 
+2020-01-13 12:02:57.051 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : <==      Total: 37
+2020-01-13 12:02:57.053 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : ==>  Preparing: select * from type 
+2020-01-13 12:02:57.054 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : ==> Parameters: 
+2020-01-13 12:02:57.056 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : <==      Total: 4
+2020-01-13 12:03:06.401 DEBUG 12480 --- [http-nio-7777-exec-8] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 12:03:06.401 DEBUG 12480 --- [http-nio-7777-exec-8] c.p.blog.service.UserService.selectUser  : ==> Parameters: pfy(String)
+2020-01-13 12:03:06.404 DEBUG 12480 --- [http-nio-7777-exec-8] c.p.blog.service.UserService.selectUser  : <==      Total: 1
+2020-01-13 12:03:10.944 DEBUG 12480 --- [http-nio-7777-exec-10] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 12:03:10.945 DEBUG 12480 --- [http-nio-7777-exec-10] c.p.blog.service.UserService.selectUser  : ==> Parameters: pfy(String)
+2020-01-13 12:03:10.948 DEBUG 12480 --- [http-nio-7777-exec-10] c.p.blog.service.UserService.selectUser  : <==      Total: 1
+2020-01-13 12:03:10.964 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 12:03:10.964 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 12:03:10.966 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 12:03:10.966 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 12:03:10.966 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 12:03:10.973 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 12:03:10.975 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : ==>  Preparing: select * from tag 
+2020-01-13 12:03:10.975 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : ==> Parameters: 
+2020-01-13 12:03:10.979 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.blog.service.TagService.selectTags   : <==      Total: 37
+2020-01-13 12:03:10.980 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : ==>  Preparing: select * from type 
+2020-01-13 12:03:10.981 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : ==> Parameters: 
+2020-01-13 12:03:10.983 DEBUG 12480 --- [http-nio-7777-exec-7] c.p.b.service.TypeService.selectTypes    : <==      Total: 4
+2020-01-13 12:05:50.219  INFO 15296 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 15296 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:05:50.222 DEBUG 15296 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:05:50.222  INFO 15296 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:05:52.440  INFO 15296 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 2.723 seconds (JVM running for 3.956)
+2020-01-13 12:08:22.874  INFO 7296 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 7296 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:08:22.877 DEBUG 7296 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:08:22.877  INFO 7296 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:08:25.759  INFO 7296 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.515 seconds (JVM running for 5.034)
+2020-01-13 12:10:34.403  INFO 9756 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 9756 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:10:34.408 DEBUG 9756 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:10:34.409  INFO 9756 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:10:37.239  INFO 9756 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 3.427 seconds (JVM running for 4.768)
+2020-01-13 12:10:37.799 ERROR 9756 --- [http-nio-7777-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-7777-exec-1] Exception processing template "admin/login": An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: org.attoparser.ParseException: (Line = 32, Column = 38) Incomplete structure: "<a type="submit" class="act-but submit" onclick="document.getElementById()('form').submit(); style="color: #FFFFFF">登录</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="js/TweenLite.min.js" th:src="@{/login/js/TweenLite.min.js}"></script>
+<script src="js/EasePack.min.js" th:src="@{/login/js/EasePack.min.js}"></script>
+<script src="js/rAF.js" th:src="@{/login/js/rAF.js}"></script>
+<script src="js/demo-1.js" th:src="@{/login/js/demo-1.js}"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-01-13 12:10:37.803 ERROR 9756 --- [http-nio-7777-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)] with root cause
+
+org.attoparser.ParseException: (Line = 32, Column = 38) Incomplete structure: "<a type="submit" class="act-but submit" onclick="document.getElementById()('form').submit(); style="color: #FFFFFF">登录</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="js/TweenLite.min.js" th:src="@{/login/js/TweenLite.min.js}"></script>
+<script src="js/EasePack.min.js" th:src="@{/login/js/EasePack.min.js}"></script>
+<script src="js/rAF.js" th:src="@{/login/js/rAF.js}"></script>
+<script src="js/demo-1.js" th:src="@{/login/js/demo-1.js}"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+
+2020-01-13 12:10:41.465 ERROR 9756 --- [http-nio-7777-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-7777-exec-9] Exception processing template "admin/login": An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: org.attoparser.ParseException: (Line = 32, Column = 38) Incomplete structure: "<a type="submit" class="act-but submit" onclick="document.getElementById()('form').submit(); style="color: #FFFFFF">登录</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="js/TweenLite.min.js" th:src="@{/login/js/TweenLite.min.js}"></script>
+<script src="js/EasePack.min.js" th:src="@{/login/js/EasePack.min.js}"></script>
+<script src="js/rAF.js" th:src="@{/login/js/rAF.js}"></script>
+<script src="js/demo-1.js" th:src="@{/login/js/demo-1.js}"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+
+2020-01-13 12:10:41.467 ERROR 9756 --- [http-nio-7777-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]" - line 32, col 38)] with root cause
+
+org.attoparser.ParseException: (Line = 32, Column = 38) Incomplete structure: "<a type="submit" class="act-but submit" onclick="document.getElementById()('form').submit(); style="color: #FFFFFF">登录</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="js/TweenLite.min.js" th:src="@{/login/js/TweenLite.min.js}"></script>
+<script src="js/EasePack.min.js" th:src="@{/login/js/EasePack.min.js}"></script>
+<script src="js/rAF.js" th:src="@{/login/js/rAF.js}"></script>
+<script src="js/demo-1.js" th:src="@{/login/js/demo-1.js}"></script>
+</body>
+</html>"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+
+2020-01-13 12:11:18.973  INFO 15456 --- [restartedMain] com.pfy.blog.BlogApplication             : Starting BlogApplication on DESKTOP-O0OUVDJ with PID 15456 (E:\blog\target\classes started by MyPc in E:\blog)
+2020-01-13 12:11:18.975 DEBUG 15456 --- [restartedMain] com.pfy.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-13 12:11:18.976  INFO 15456 --- [restartedMain] com.pfy.blog.BlogApplication             : No active profile set, falling back to default profiles: default
+2020-01-13 12:11:21.335  INFO 15456 --- [restartedMain] com.pfy.blog.BlogApplication             : Started BlogApplication in 2.853 seconds (JVM running for 4.129)
+2020-01-13 12:11:27.165  WARN 15456 --- [http-nio-7777-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-13 12:11:28.126 DEBUG 15456 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==>  Preparing: select * from user where username = ? 
+2020-01-13 12:11:28.151 DEBUG 15456 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : ==> Parameters: pfy(String)
+2020-01-13 12:11:28.178 DEBUG 15456 --- [http-nio-7777-exec-1] c.p.blog.service.UserService.selectUser  : <==      Total: 1
+2020-01-13 12:11:28.272 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 12:11:28.273 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 12:11:28.280 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 12:11:28.281 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 12:11:28.282 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 12:11:28.289 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 12:11:28.294 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.blog.service.TagService.selectTags   : ==>  Preparing: select * from tag 
+2020-01-13 12:11:28.294 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.blog.service.TagService.selectTags   : ==> Parameters: 
+2020-01-13 12:11:28.302 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.blog.service.TagService.selectTags   : <==      Total: 37
+2020-01-13 12:11:28.303 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.TypeService.selectTypes    : ==>  Preparing: select * from type 
+2020-01-13 12:11:28.303 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.TypeService.selectTypes    : ==> Parameters: 
+2020-01-13 12:11:28.305 DEBUG 15456 --- [http-nio-7777-exec-3] c.p.b.service.TypeService.selectTypes    : <==      Total: 4
+2020-01-13 19:18:55.491 DEBUG 15456 --- [http-nio-7777-exec-6] c.pfy.blog.service.UserService.getUser   : ==>  Preparing: select * from user limit 1 
+2020-01-13 19:18:55.525 DEBUG 15456 --- [http-nio-7777-exec-6] c.pfy.blog.service.UserService.getUser   : ==> Parameters: 
+2020-01-13 19:18:55.827 DEBUG 15456 --- [http-nio-7777-exec-6] c.pfy.blog.service.UserService.getUser   : <==      Total: 1
+2020-01-13 19:18:55.837 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM blog a, type b WHERE a.type_id = b.type_id 
+2020-01-13 19:18:55.838 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.BlogService.selectAllBlog_COUNT  : ==> Parameters: 
+2020-01-13 19:18:55.902 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.BlogService.selectAllBlog_COUNT  : <==      Total: 1
+2020-01-13 19:18:55.903 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectAllBlog  : ==>  Preparing: select a.* ,b.* from blog a,type b where a.type_id = b.type_id LIMIT ? 
+2020-01-13 19:18:55.904 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectAllBlog  : ==> Parameters: 5(Integer)
+2020-01-13 19:18:55.935 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectAllBlog  : <==      Total: 5
+2020-01-13 19:18:55.936 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectBlogNum  : ==>  Preparing: select count(1) from blog 
+2020-01-13 19:18:55.937 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectBlogNum  : ==> Parameters: 
+2020-01-13 19:18:55.942 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectBlogNum  : <==      Total: 1
+2020-01-13 19:18:55.947 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.TypeService.selectSomeType       : ==>  Preparing: select * from type limit 5 
+2020-01-13 19:18:55.948 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.TypeService.selectSomeType       : ==> Parameters: 
+2020-01-13 19:18:55.952 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.s.TypeService.selectSomeType       : <==      Total: 4
+2020-01-13 19:18:55.954 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.TagService.selectSomeTag   : ==>  Preparing: select * from tag limit 10 
+2020-01-13 19:18:55.954 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.TagService.selectSomeTag   : ==> Parameters: 
+2020-01-13 19:18:55.956 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.TagService.selectSomeTag   : <==      Total: 10
+2020-01-13 19:18:55.958 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectNewBlog  : ==>  Preparing: select * from blog where recommend_switch = true order by create_time desc limit 8 
+2020-01-13 19:18:55.958 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectNewBlog  : ==> Parameters: 
+2020-01-13 19:18:56.104 DEBUG 15456 --- [http-nio-7777-exec-6] c.p.b.service.BlogService.selectNewBlog  : <==      Total: 7

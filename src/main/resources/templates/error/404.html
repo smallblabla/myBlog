@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="share_html :: head(~{::title})">
+  <title>404</title>
+</head>
+<body>
+
+<!--导航-->
+<nav th:replace="share_html :: menu(0)"  class="ui inverted attached segment m-padded-tb-mini m-shadow-small"/>
+
+<br>
+<br>
+<br>
+
+  <div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-huge" >
+      <div class="ui contianer">
+        <h2>404</h2>
+        <p>对不起，你访问的资源不存在</p>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--底部footer-->
+<footer th:replace="share_html :: footer" class="ui inverted vertical segment m-padded-tb-massive"/>
+</body>
+</html>

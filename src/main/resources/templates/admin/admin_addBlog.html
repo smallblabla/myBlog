@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/share_html :: head(~{::title})">
+  <title>博客</title>
+</head>
+<body>
+<!-- 导航 -->
+<nav th:replace="admin/share_html :: nav(1)"/>
+<!-- 二级导航 -->
+<div th:replace="admin/share_html :: div_nav"/>
+
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+      <form action="#" id="blog-form" method="post" class="ui form" th:action="*{id}==null ? @{/admin/blog/addBlog} : @{/admin/blog/changeBlog/{id}(id=*{id})}">
+        <input type="hidden" name="releaseSwitch">
+        <div class="required field">
+          <div class="ui left labeled input">
+            <div class="ui selection compact teal basic dropdown label">
+              <input type="hidden" value="原创" name="flag" th:value="*{id}==null ? '' : *{blog.getFlag()}">
+              <i class="dropdown icon"></i>
+              <div class="text"  value="原创"></div>
+              <div class="menu">
+                <div class="item" data-value="原创">原创</div>
+                <div class="item" data-value="转载">转载</div>
+                <div class="item" data-value="翻译">翻译</div>
+              </div>
+            </div>
+            <input type="text" name="title" placeholder="标题" th:value="*{id}==null ? '' : *{blog.getTitle()}">
+          </div>
+        </div>
+
+        <div class="field">
+          <div id="md-content" style="z-index: 1 !important;">
+            <textarea placeholder="博客内容" name="content" style="display: none" th:text="*{id}==null ? '' : *{blog.getContent()}">
+            </textarea>
+          </div>
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <div class="ui left labeled action input">
+              <label class="ui compact teal basic label">分类</label>
+              <div class="ui fluid selection dropdown">
+                <input type="hidden" name="type" th:value="*{id}==null ? '' : *{blog.getType().getType_id()}" >
+                <i class="dropdown icon"></i>
+                <div class="default text">分类</div>
+                <div class="menu">
+                  <div class="item" th:each="type:${types}" th:data-value="${type.getType_id()}" th:text="${type.getType_name()}">错误日志</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled action input">
+              <label class="ui compact teal basic label">标签</label>
+              <div class="ui fluid selection multiple search  dropdown">
+                <input type="hidden" name="tags" th:value="*{id}==null ? '' : *{blog.getTagIds()}">
+                <i class="dropdown icon"></i>
+                <div class="default text">标签</div>
+                <div class="menu">
+                  <div class="item" th:each="tag:${tags}" th:data-value="${tag.getTag_id()}" th:text="${tag.getTag_name()}">java</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left labeled input">
+            <label class="ui teal basic label">首图</label>
+            <input type="text" name="picture" placeholder="首图引用地址" th:value="*{id}==null ? '' : *{blog.getPicture()}">
+          </div>
+        </div>
+
+        <div class="required field">
+          <textarea name="description" th:text="*{id}==null ? '': *{blog.getDescription()}" placeholder="博客描述..." maxlength="200"></textarea>
+        </div>
+
+        <div class="inline fields">
+          <div class="field">
+            <div class="ui checkbox">
+              <input name="recommendSwitch" type="checkbox" th:checked="*{id}==null ? 'true': *{blog.isRecommend_switch()}" onclick="javascript:document.getElementById('recommendSwitch').value=this.checked;">
+              <input name="recommendSwitch" type="hidden" value="false" id="recommendSwitch">
+              <label for="recommendSwitch">推荐</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input name="copyrightSwitch" type="checkbox" th:checked="*{id}==null ? 'true': *{blog.isCopyright_switch()}" onclick="javascript:document.getElementById('copyrightSwitch').value=this.checked;">
+              <input name="copyrightSwitch" type="hidden" value="false" id="copyrightSwitch">
+              <label for="copyrightSwitch">转载声明</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input name="appreciateSwitch" type="checkbox" th:checked="*{id}==null ? 'true': *{blog.isAppreciate_switch()}" onclick="javascript:document.getElementById('appreciateSwitch').value=this.checked;">
+              <input name="appreciateSwitch" type="hidden" value="false" id="appreciateSwitch">
+              <label for="appreciateSwitch">赞赏</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input name="commentSwitch" type="checkbox" th:checked="*{id}==null ? 'true': *{blog.isComment_switch()}" onclick="javascript:document.getElementById('commentSwitch').value=this.checked;">
+              <input name="commentSwitch" type="hidden" value="false" id="commentSwitch">
+              <label for="commentSwitch">评论</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui error message"></div>
+
+        <div class="ui right aligned container">
+          <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
+          <button id="save-btn" class="ui secondary button">保存</button>
+          <button id="publish-btn" class="ui teal button">发布</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="admin/share_html :: footer"/>
+  <!--js-->
+  <th:block th:replace="admin/share_html :: script"/>
+
+  <script>
+
+    //初始化Markdown编辑器
+    var contentEditor;
+    $(function() {
+      contentEditor = editormd("md-content", {
+        width   : "100%",
+        height  : 640,
+        syncScrolling : "single",
+        path    : "/lib/editormd/lib/"
+      });
+    });
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+      on : 'hover'
+    });
+
+    $('.ui.form').form({
+      fields : {
+        title : {
+          identifier: 'title',
+          rules: [{
+            type : 'empty',
+            prompt: '标题：请输入博客标题'
+          }]
+        },
+        content : {
+          identifier: 'content',
+          rules: [{
+            type : 'empty',
+            prompt: '标题：请输入博客内容'
+          }]
+        },
+        typeId : {
+          identifier: 'type',
+          rules: [{
+            type : 'empty',
+            prompt: '标题：请输入博客分类'
+          }]
+        },
+        TagsId : {
+          identifier: 'tags',
+          rules: [{
+            type : 'empty',
+            prompt: '标签：请输入标签类型'
+          }]
+        },
+        firstPicture : {
+          identifier: 'picture',
+          rules: [{
+            type : 'empty',
+            prompt: '标题：请输入博客首图'
+          }]
+        },
+        description : {
+          identifier: 'description',
+          rules: [{
+            type : 'empty',
+            prompt: '标题：请输入博客描述'
+          }]
+        }
+      }
+    });
+
+    $('#save-btn').click(function () {
+      $('[name="releaseSwitch"]').val(false);
+      $('#blog-form').submit();
+    });
+    $('#publish-btn').click(function () {
+      $('[name="releaseSwitch"]').val(true);
+      $('#blog-form').submit();
+    });
+
+
+  </script>
+</body>
+</html>

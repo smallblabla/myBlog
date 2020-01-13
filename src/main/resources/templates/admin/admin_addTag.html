@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/share_html :: head(~{::title})">
+    <title>标签</title>
+</head>
+<body>
+<!-- 导航 -->
+<nav th:replace="admin/share_html :: nav(3)"/>
+<!-- 二级导航 -->
+<div th:replace="admin/share_html :: div_nav"/>
+
+
+<!-- 中间内容 -->
+<div style="padding: 100px 200px;">
+    <div class="ui container">
+        <form class="ui form" method="post" th:action="*{id}==null ? @{/admin/tag/addTag} : @{/admin/tag/changeTag/{id}(id=*{id})} ">
+            <div class="required field">
+                <div class="ui left labeled input">
+                    <label class="ui teal basic label">名称</label>
+                    <input type="text" name="tagName" placeholder="标签名称" th:value="*{id}==null ? '标签名称' : *{tag.getTag_name()}" >
+                </div>
+            </div>
+            <!-- 警告 -->
+            <div class="ui error message"></div>
+            <!-- 返回，提交，发布 -->
+            <div class="ui right aligned container">
+                <button type="button" class="ui yellow button" onclick="window.history.go(-1)">返回</button>
+                <button class="ui teal submit button" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- 底部 -->
+<footer th:replace="admin/share_html :: footer"/>
+
+
+<!--js-->
+<th:block th:replace="admin/share_html :: script"/>
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+
+    $('.ui.form').form({
+        fields : {
+            title : {
+                identifier: 'typeName',
+                rules: [{
+                    type : 'empty',
+                    prompt: '请输入分类名称'
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

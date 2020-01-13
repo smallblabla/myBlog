@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pfy.blog.service.TypeService">
+    <resultMap id="Type" type="com.pfy.blog.entity.Type">
+        <id property="type_id" column="type_id" javaType="int"></id>
+        <result property="type_name" column="type_name" javaType="String"></result>
+        <result column="typeNum" javaType="int"></result>
+    </resultMap>
+
+    <insert id="addType" parameterType="java.lang.String">
+        insert into type(type_name) values (#{type_name})
+    </insert>
+    <delete id="deleteType" parameterType="int">
+        delete from type where type_id = #{type_id}
+    </delete>
+    <select id="selectTypes" resultType="com.pfy.blog.entity.Type">
+        select * from type
+    </select>
+    <update id="changeType" parameterType="com.pfy.blog.entity.Type">
+        update type set  type_name = #{type_name} where type_id = #{type_id}
+    </update>
+    <select id="selectTypeById" parameterType="int" resultType="com.pfy.blog.entity.Type">
+        select * from type where type_id = #{type_id}
+    </select>
+    <select id="selectTypeNum" resultType="int">
+        select count(1) from type
+    </select>
+    <select id="selectOneTypeNum" parameterType="int" resultType="int">
+        select count(1) from blog where type_id = #{type_id}
+    </select>
+    <select id="selectTopType" resultType="java.util.HashMap">
+        select type_id, count(*) from blog group by type_id limit 5
+    </select>
+    <select id="selectSomeType" resultType="com.pfy.blog.entity.Type">
+        select * from type limit 5
+    </select>
+</mapper>

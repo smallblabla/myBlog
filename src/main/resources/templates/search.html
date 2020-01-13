@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="share_html :: head(~{::title})">
+  <title>搜索结果</title>
+</head>
+<body>
+  <!--导航-->
+  <nav th:replace="share_html :: menu(0)"  class="ui inverted attached segment m-padded-tb-mini m-shadow-small"/>
+
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+      <!--header-->
+      <div class="ui top attached segment">
+        <div class="ui middle aligned two column grid">
+          <div class="column">
+            <h3 class="ui teal header">搜索结果</h3>
+          </div>
+          <div class="right aligned column">
+            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageBlogs.total}"> 14 </h2> 个
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="ui top attached teal segment">
+        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${pageBlogs.list}">
+          <div class="ui middle aligned mobile reversed stackable grid" >
+            <div class="eleven wide column">
+              <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.getId()})}" target="_blank" class="m-black" th:text="${blog.getTitle()}">你真的理解什么是财富自由吗?</a></h3>
+              <p class="m-text" th:text="|${blog.getDescription()}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+              <div class="ui grid">
+                <div class="eleven wide column">
+                  <div class="ui mini horizontal link list">
+                    <div class="item">
+                      <img src="https://unsplash.it/100/100?image=1005" th:src="${user.getPicture()}" alt="" class="ui avatar image">
+                      <div class="content"><a href="#" class="header" th:text="${user.getName()}" th:href="@{/about}">PFY</a></div>
+                    </div>
+                    <div class="item">
+                      <i class="calendar icon"></i><span th:text="${blog.getCreate_time()}">2017-10-01</span>
+                    </div>
+                    <div class="item">
+                      <i class="eye icon"></i> <span th:text="${blog.getViews()}">2342</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="right aligned five wide column">
+                  <a href="#" target="_blank" class="ui blue label m-padded-tiny m-text-thin" th:text="${blog.getType().getType_name()}">认知升级</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="five wide column">
+              <a href="#" th:href="@{/blog/{id}(id=${blog.getId()})}" target="_blank">
+                <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.getPicture()}}"  alt="" class="ui rounded image">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--footer-->
+      <div class="ui bottom attached segment">
+        <div class="ui middle aligned three column grid">
+          <div class="column">
+            <a href="#" class="ui mini red button" th:href="@{/search(query=${query})}">首页</a>
+            <a href="#" class="ui mini yellow button" th:href="@{/search(query=${query},pageNum=${pageBlogs.hasPreviousPage}?${pageBlogs.prePage}:1)}">>上一页</a>
+          </div>
+          <span class="column">当前 <span th:text="${pageBlogs.pageNum}"></span> 页,总 <span th:text="${pageBlogs.pages}"></span> 页,共 <span th:text="${pageBlogs.total}"></span> 条博客</span>
+          <div class="right aligned column">
+            <a href="#" class="ui mini yellow button" th:href="@{/search(query=${query},pageNum=${pageBlogs.hasNextPage}?${pageBlogs.nextPage}:${pageBlogs.pages})}">下一页</a>
+            <a href="#" class="ui mini red button" th:href="@{/search(query=${query},pageNum=${pageBlogs.pages})}">尾页</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="share_html :: footer" class="ui inverted vertical segment m-padded-tb-massive"/>
+  <!--js-->
+  <th:block th:replace="share_html :: script"/>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+  </script>
+</body>
+</html>

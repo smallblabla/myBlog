@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pfy.blog.service.BlogService">
+    <resultMap id="Blog" type="com.pfy.blog.entity.Blog">
+        <id column="id" property="id"/>
+        <result column="title" property="title" javaType="String"/>
+        <result column="content" property="content" javaType="String"/>
+        <result column="picture" property="picture" javaType="String"/>
+        <result column="description" property="description" javaType="String"/>
+        <result column="flag" property="flag" javaType="String"/>
+        <result column="views" property="views" javaType="int"/>
+        <result column="appreciate_switch" property="appreciate_switch" javaType="boolean"/>
+        <result column="copyright_switch" property="copyright_switch" javaType="boolean"/>
+        <result column="comment_switch" property="comment_switch" javaType="boolean"/>
+        <result column="release_switch" property="release_switch" javaType="boolean"/>
+        <result column="recommend_switch" property="recommend_switch" javaType="boolean"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+        <result column="tags_id" property="tagIds"/>
+        <association property="type" javaType="com.pfy.blog.entity.Type">
+            <id column="type_id" property="type_id"/>
+            <result column="type_name" property="type_name" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <insert id="addBlog" parameterType="com.pfy.blog.entity.Blog">
+        insert into blog(flag,title,content,picture,description,appreciate_switch,comment_switch,copyright_switch,recommend_switch,release_switch,type_id,tags_id,create_time,update_time)
+                values (#{flag},#{title},#{content},#{picture},#{description},#{appreciate_switch},#{comment_switch},#{copyright_switch},#{recommend_switch},#{release_switch},#{type.type_id},#{tagIds},#{create_time},#{update_time})
+    </insert>
+
+    <select id="selectBlogNum" resultType="int">
+        select count(1) from blog
+    </select>
+
+    <select id="selectAllBlog" resultMap="Blog">
+        select a.* ,b.* from blog a,type b where a.type_id = b.type_id
+    </select>
+
+    <delete id="deleteBlog" parameterType="int">
+        delete from blog where id = #{id}
+    </delete>
+
+    <select id="selectBlogById" parameterType="int" resultMap="Blog">
+        select a.* ,b.* from blog a,type b where a.id = #{id} and a.type_id = b.type_id
+    </select>
+
+    <update id="changeBlog" parameterType="Blog">
+        update blog set flag=#{flag},title=#{title},content=#{content},picture=#{picture},description=#{description},appreciate_switch=#{appreciate_switch},
+        comment_switch=#{comment_switch},copyright_switch=#{copyright_switch},recommend_switch=#{recommend_switch},release_switch=#{release_switch},type_id=#{type.type_id},tags_id=#{tagIds},
+        create_time=#{create_time},update_time=#{update_time} where id = #{id}
+    </update>
+
+    <select id="selectBlogByTag" parameterType="int" resultMap="Blog">
+        <bind name="pattern" value="'%' + tag_id + '%'" />
+        select a.*, b.* from blog a,type b where a.tags_id like #{pattern} and a.type_id = b.type_id
+    </select>
+
+    <select id="selectBlogByType" parameterType="int" resultMap="Blog">
+        select a.*, b.* from blog a,type b where a.type_id=#{type_id} and a.type_id = b.type_id
+    </select>
+
+    <select id="selectYears" resultType="String">
+       select DATE_FORMAT(create_time,'%Y')years from blog group by years;
+    </select>
+
+    <select id="selectBlogByYear" parameterType="String" resultMap="Blog">
+        select * from blog where DATE_FORMAT(create_time,'%Y') = #{year} order by create_time desc;
+    </select>
+
+    <select id="selectNewBlog" resultMap="Blog">
+        select * from blog where recommend_switch = true order by create_time desc limit 8
+    </select>
+
+    <select id="selectBlogBySearch" parameterType="String" resultMap="Blog">
+        <bind name="pattern" value="'%' + query + '%'" />
+        select a.*, b.* from blog a,type b where a.title like #{pattern} and a.type_id = b.type_id
+    </select>
+
+    <update id="addView" parameterType="int">
+        update blog set views=views+1 where id=#{blog_id}
+    </update>
+
+
+</mapper>
